@@ -1,1 +1,876 @@
+mode: rule
+log-level: warning
+mixed-port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+ipv6: false
+allow-lan: false
+bind-address: 127.0.0.1
+external-controller: 127.0.0.1:9090
+secret: oAZPQychVeOij9YWrAqKqBSURylAqXgfmNvptlYfWwMTQ7Op
+tcp-concurrent: true
+unified-delay: true
+find-process-mode: strict
+profile:
+  store-selected: true
+  store-fake-ip: true
+geodata-mode: true
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+      - 443
+      - 8443
+      override-destination: true
+    QUIC:
+      ports:
+      - 443
+      - 8443
+      override-destination: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+  - https://dns.alicdn.com/dns-query
+  - https://doh.pub/dns-query
+  - 223.5.5.5
+  fallback:
+  - https://dns.google/dns-query
+  - https://1.1.1.1/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - localhost.ptlogin2.qq.com
+  - +.cmpassport.com
+  - id6.me
+  - pool.ntp.org
+  - time.apple.com
+  - time.windows.com
+  - +.qq.com
+  - +.tencent.com
+  - +.apple.com
+  - +.icloud.com
+  - +.mzstatic.com
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  proxy-server-nameserver:
+  - https://1.1.1.1/dns-query
+  - https://dns.google/dns-query
+  respect-rules: true
+  nameserver-policy:
+  geosite:cn:
+    - https://dns.alicdn.com/dns-query
+    - https://doh.pub/dns-query
+    - 223.5.5.5
 
+  geosite:private:
+    - 223.5.5.5
+subscribe-url: 
+proxies:
+- name: ⏰ 套餐到期：2027-03-28
+  type: anytls
+  server: hk01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: hk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🔋 剩余流量：152.94 GB
+  type: anytls
+  server: hk01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: hk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: ⏳ 距离重置流量：10 天
+  type: anytls
+  server: hk01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: hk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 01 | AnyTLS
+  type: anytls
+  server: hk01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: hk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 02 | AnyTLS
+  type: anytls
+  server: hk02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: hk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 03 | AnyTLS
+  type: anytls
+  server: ov1.5714c548.com
+  port: 25201
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov1.5714c548.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 04 | AnyTLS
+  type: anytls
+  server: ov1.5714c548.com
+  port: 25202
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov1.5714c548.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 05 | AnyTLS
+  type: anytls
+  server: ov1.5714c548.com
+  port: 25203
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov1.5714c548.com
+  skip-cert-verify: false
+- name: 🇭🇰 香港 06 | AnyTLS
+  type: anytls
+  server: ov1.5714c548.com
+  port: 25204
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov1.5714c548.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 01 | AnyTLS
+  type: anytls
+  server: jp01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: jp01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 02 | AnyTLS
+  type: anytls
+  server: jp02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: jp01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 03 | AnyTLS
+  type: anytls
+  server: ov2.5714c548.com
+  port: 25208
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov2.5714c548.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 04 | AnyTLS
+  type: anytls
+  server: ov2.5714c548.com
+  port: 25209
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov2.5714c548.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 05 | AnyTLS
+  type: anytls
+  server: ov2.5714c548.com
+  port: 25210
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov2.5714c548.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 06 | AnyTLS
+  type: anytls
+  server: ov2.5714c548.com
+  port: 25211
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov2.5714c548.com
+  skip-cert-verify: false
+- name: 🇯🇵 日本 07 | AnyTLS
+  type: anytls
+  server: ov2.5714c548.com
+  port: 25212
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov2.5714c548.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 01 | AnyTLS
+  type: anytls
+  server: sg01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: sg01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 02 | AnyTLS
+  type: anytls
+  server: sg02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: sg01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 03 | AnyTLS
+  type: anytls
+  server: ov3.5714c548.com
+  port: 25214
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov3.5714c548.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 04 | AnyTLS
+  type: anytls
+  server: ov3.5714c548.com
+  port: 25215
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov3.5714c548.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 05 | AnyTLS
+  type: anytls
+  server: ov3.5714c548.com
+  port: 25216
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov3.5714c548.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 06 | AnyTLS
+  type: anytls
+  server: ov3.5714c548.com
+  port: 25217
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov3.5714c548.com
+  skip-cert-verify: false
+- name: 🇸🇬 狮城 07 | AnyTLS
+  type: anytls
+  server: ov3.5714c548.com
+  port: 25218
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov3.5714c548.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 01 | AnyTLS
+  type: anytls
+  server: us01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: us01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 02 | AnyTLS
+  type: anytls
+  server: us02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: us01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 03 | AnyTLS
+  type: anytls
+  server: ov5.5714c548.com
+  port: 25225
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov5.5714c548.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 04 | AnyTLS
+  type: anytls
+  server: ov5.5714c548.com
+  port: 25226
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov5.5714c548.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 05 | AnyTLS
+  type: anytls
+  server: ov5.5714c548.com
+  port: 25227
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov5.5714c548.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 06 | AnyTLS
+  type: anytls
+  server: ov5.5714c548.com
+  port: 25228
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov5.5714c548.com
+  skip-cert-verify: false
+- name: 🇺🇸 美国 07 | AnyTLS
+  type: anytls
+  server: ov5.5714c548.com
+  port: 25229
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov5.5714c548.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 01 | AnyTLS
+  type: anytls
+  server: tw01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: tw01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 02 | AnyTLS
+  type: anytls
+  server: tw02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: tw01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 03 | AnyTLS
+  type: anytls
+  server: ov4.5714c548.com
+  port: 25220
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov4.5714c548.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 04 | AnyTLS
+  type: anytls
+  server: ov4.5714c548.com
+  port: 25221
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov4.5714c548.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 05 | AnyTLS
+  type: anytls
+  server: ov4.5714c548.com
+  port: 25222
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov4.5714c548.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 06 | AnyTLS
+  type: anytls
+  server: ov4.5714c548.com
+  port: 25223
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov4.5714c548.com
+  skip-cert-verify: false
+- name: 🇹🇼 台湾 07 | AnyTLS
+  type: anytls
+  server: ov4.5714c548.com
+  port: 25224
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ov4.5714c548.com
+  skip-cert-verify: false
+- name: 🇰🇷 韩国 01 | AnyTLS
+  type: anytls
+  server: kr01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: kr01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇰🇷 韩国 02 | AnyTLS
+  type: anytls
+  server: kr02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: kr01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇬🇧 英国 01 | AnyTLS
+  type: anytls
+  server: uk01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: uk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇬🇧 英国 02 | AnyTLS
+  type: anytls
+  server: uk02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: uk01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇨🇦 加拿大 01 | AnyTLS
+  type: anytls
+  server: ca01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ca01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇨🇦 加拿大 02 | AnyTLS
+  type: anytls
+  server: ca02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ca01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇵🇭 菲律宾 01 | AnyTLS
+  type: anytls
+  server: ph01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ph01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇵🇭 菲律宾 02 | AnyTLS
+  type: anytls
+  server: ph02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ph01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇻🇳 越南 01 | AnyTLS
+  type: anytls
+  server: vn01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: vn01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇻🇳 越南 02 | AnyTLS
+  type: anytls
+  server: vn02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: vn01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇮🇩 印尼 01 | AnyTLS
+  type: anytls
+  server: id01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: id01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇮🇩 印尼 02 | AnyTLS
+  type: anytls
+  server: id02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: id01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇭 泰国 01 | AnyTLS
+  type: anytls
+  server: th01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: th01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇭 泰国 02 | AnyTLS
+  type: anytls
+  server: th02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: th01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇲🇾 马来 01 | AnyTLS
+  type: anytls
+  server: my01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: my01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇲🇾 马来 02 | AnyTLS
+  type: anytls
+  server: my02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: my01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇷 土耳其 01 | AnyTLS
+  type: anytls
+  server: tr01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: tr01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇹🇷 土耳其 02 | AnyTLS
+  type: anytls
+  server: tr02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: tr01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇮🇳 印度 01 | AnyTLS
+  type: anytls
+  server: in01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: in01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇮🇳 印度 02 | AnyTLS
+  type: anytls
+  server: in02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: in01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇲🇴 澳门 01 | AnyTLS
+  type: anytls
+  server: mo01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: mo01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇲🇴 澳门 02 | AnyTLS
+  type: anytls
+  server: mo02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: mo01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇦🇷 阿根廷 01 | AnyTLS
+  type: anytls
+  server: ar01-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ar01-ofo.vlessnode.com
+  skip-cert-verify: false
+- name: 🇦🇷 阿根廷 02 | AnyTLS
+  type: anytls
+  server: ar02-ofo.vlessnode.com
+  port: 443
+  password: ccf23fc3-91f8-451a-b70b-6f68271a89fc
+  client-fingerprint: chrome
+  sni: ar01-ofo.vlessnode.com
+  skip-cert-verify: false
+proxy-groups:
+- name: QUIC
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: 默认代理
+  icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/%24tash.png
+  type: select
+  proxies:
+  - 自动选择
+  - 香港自动
+  - 日本自动
+  - 狮城自动
+  - 美国自动
+  - 台湾自动
+  - 澳门自动
+  - 印度自动
+  - 土耳其自动
+  - 阿根廷自动
+  - DIRECT
+- name: 自动选择
+  type: url-test
+  include-all: true
+  tolerance: 25
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)香港|日本|新加坡|美国|台湾|韩国|英国|印度|加拿大|澳门|越南|菲律宾|印尼|🇦🇷|马来|泰国|土耳其|家宽|HK|JP|SG|US|TW|KR|UK|CA|VN|TH|MY|ID|PH|IN|TR|MO|AR
+- name: AI
+  icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+  type: url-test
+  tolerance: 60
+  interval: 180
+  lazy: true
+  url: https://chatgpt.com/cdn-cgi/trace
+  proxies:
+  - 日本自动
+  - 狮城自动
+  - 韩国自动
+  - 美国自动
+- name: 国际媒体
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+  type: url-test
+  tolerance: 50
+  interval: 180
+  lazy: true
+  url: https://www.youtube.com/generate_204
+  proxies:
+  - 香港自动
+  - 日本自动
+  - 美国自动
+  - 狮城自动
+  - 台湾自动
+  - 韩国自动
+  - 英国自动
+  - 加拿大自动
+- name: TikTok
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png
+  type: select
+  proxies:
+  - 美国自动
+  - 日本自动
+  - 狮城自动
+  - 香港自动
+  - 默认代理
+- name: 谷歌服务
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+  type: select
+  proxies:
+  - 默认代理
+  - DIRECT
+- name: Github
+  icon: https://brand.github.com/_next/static/media/logo-03.cc5e5332.png
+  type: select
+  proxies:
+  - 默认代理
+  - DIRECT
+- name: 游戏平台
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+  type: select
+  proxies:
+  - 默认代理
+  - DIRECT
+- name: Telegram
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+  type: select
+  proxies:
+  - 默认代理
+- name: Twitter
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+  type: select
+  proxies:
+  - 默认代理
+- name: Spotify
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+  type: select
+  proxies:
+  - 默认代理
+- name: 微软服务
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  type: select
+  proxies:
+  - 默认代理
+  - DIRECT
+- name: Emby
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+  type: select
+  proxies:
+  - 默认代理
+- name: 漏网之鱼
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+  type: select
+  proxies:
+  - 默认代理
+  - DIRECT
+- name: 香港自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇭🇰|香港|HK|Hong|家宽
+- name: 日本自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇯🇵|日本|JP|Japan
+- name: 狮城自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇸🇬|狮城|新加坡|SG|Singapore
+- name: 韩国自动
+  icon: https://www.emojiall.com/images/120/twitter/1f1f0-1f1f7.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇰🇷|韩国|KR|Korea
+- name: 美国自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇺🇸|美国|US|United|家宽
+- name: 英国自动
+  icon: https://www.emojiall.com/images/120/skype/1f1ec-1f1e7.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇬🇧|英国|UK|United Kingdom|London
+- name: 加拿大自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Canada.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇨🇦|加拿大|CA|Canada
+- name: 泰国自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Thailand.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇹🇭|泰国|TH|Thailand
+- name: 马来自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Malaysia.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇲🇾|马来|马来西亚|MY|Malaysia
+- name: 越南自动
+  icon: https://www.emojiall.com/images/120/twitter/1f1fb-1f1f3.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇻🇳|越南|VN|Vietnam
+- name: 菲律宾自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Philippines.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇵🇭|菲律宾|PH|Philippines
+- name: 印尼自动
+  icon: https://www.emojiall.com/images/120/twitter/1f1ee-1f1e9.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇮🇩|印尼|印度尼西亚|ID|Indonesia
+- name: 台湾自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇹🇼|台湾|TW|Taiwan
+- name: 澳门自动
+  icon: https://www.emojiall.com/images/120/twitter/1f1f2-1f1f4.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇲🇴|澳门|MO|Macao|Macau
+- name: 印度自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png
+  type: url-test
+  include-all: true
+  tolerance: 30
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇮🇳|印度|IN|India
+- name: 阿根廷自动
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Argentina.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇦🇷|阿根廷|AR|Argentina
+- name: 土耳其自动
+  icon: https://www.emojiall.com/images/120/emojione/1f1f9-1f1f7.png
+  type: url-test
+  include-all: true
+  tolerance: 35
+  interval: 180
+  lazy: true
+  url: https://cp.cloudflare.com/generate_204
+  filter: (?i)🇹🇷|土耳其|TR|Turkey
+rules:
+- GEOSITE,private,DIRECT
+- GEOIP,LAN,DIRECT
+- AND,((PROTOCOL,UDP),(DEST-PORT,443)),QUIC
+- DOMAIN-SUFFIX,openai.com,AI
+- DOMAIN-SUFFIX,chatgpt.com,AI
+- DOMAIN-SUFFIX,oaistatic.com,AI
+- DOMAIN-SUFFIX,oaiusercontent.com,AI
+- DOMAIN-SUFFIX,claude.ai,AI
+- DOMAIN-SUFFIX,anthropic.com,AI
+- DOMAIN-SUFFIX,poe.com,AI
+- DOMAIN-SUFFIX,perplexity.ai,AI
+- DOMAIN-SUFFIX,x.ai,AI
+- GEOSITE,tiktok,TikTok
+- GEOSITE,youtube,国际媒体
+- GEOSITE,netflix,国际媒体
+- GEOSITE,disney,国际媒体
+- GEOSITE,hbo,国际媒体
+- GEOSITE,spotify,Spotify
+- GEOSITE,telegram,Telegram
+- GEOSITE,twitter,Twitter
+- GEOSITE,github,Github
+- GEOSITE,google,谷歌服务
+- GEOSITE,microsoft,微软服务
+- GEOSITE,steam,游戏平台
+- GEOSITE,epic,游戏平台
+- GEOSITE,origin,游戏平台
+- GEOSITE,battlenet,游戏平台
+- GEOSITE,emby,Emby
+- GEOSITE,geolocation-!cn,默认代理
+- GEOIP,CN,DIRECT
+- MATCH,漏网之鱼
